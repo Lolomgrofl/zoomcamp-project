@@ -1,5 +1,5 @@
 __version__ = "0.1.0"
-__author__ = ""
+__author__ = "Luka Vuksanovic"
 
 # MAJOR.MINOR.PATCH
 # MAJOR version when you make incompatible API changes,
