@@ -9,7 +9,7 @@ from app.schemas.statistics import BaseStatistics, PropertyModel
 router = APIRouter(tags=["properties"], prefix="/properties")
 
 
-@router.get("")
+@router.get("", summary="Filter properties by price, bedrooms, bathrooms, and city")
 async def filter_properties(
     session: SessionDep,
     min_price: float | None = Query(None, description="Minimum price"),
@@ -46,7 +46,7 @@ async def filter_properties(
     return [PropertyModel.model_validate(property) for property in query.all()]
 
 
-@router.get("/statistics")
+@router.get("/statistics", summary="Get statistics about the properties")
 async def process_data() -> BaseStatistics:
     df = pd.read_sql("select * from properties", engine)
 
