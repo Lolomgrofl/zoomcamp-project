@@ -51,6 +51,7 @@ cycler==0.12.1
     # via matplotlib
 debugpy==1.8.1
     # via ipykernel
+    # via zoomcamp-project
 decorator==5.1.1
     # via ipython
 distlib==0.3.8
