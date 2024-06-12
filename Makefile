@@ -39,3 +39,7 @@ downgrade:  ## Downgrade by 1 revision
 downgrade_to:  ## Downgrade to the specific revision (usage: make downgrade_to revision="revision")
 	docker compose up -d | true
 	docker compose exec app alembic downgrade "$(revision)"
+
+.PHONY: test
+test: ## Run tests
+	pytest
