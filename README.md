@@ -31,4 +31,5 @@ After the pre-requisites have been installed, you can follow the steps below to 
 can be found in the ```visualization.ipynb``` notebook. The notebook is self-explanatory and contains the code for the visualization of the outlier detection.
 
 ## Deployment
-TBD
+Deployed version of the app can be found at: http://13.58.214.82/docs
+Deployment was done using AWS EC2 instance, Docker and Nginx.
