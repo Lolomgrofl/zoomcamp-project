@@ -1,3 +1,4 @@
+from loguru import logger
 from pandas import DataFrame
 from sqlalchemy.orm import Session
 
@@ -17,6 +18,8 @@ class StatisticsService:
     ):
         query = session.query(Property)
 
+        logger.info("Filtering properties...")
+
         if min_price:
             query = query.filter(Property.price >= min_price)
 
@@ -31,17 +34,19 @@ class StatisticsService:
 
         if city:
             query = query.filter(Property.city == city)
+        logger.info("Filtering finished...")
 
         return query.all()
 
     @staticmethod
     def generate_statistics(df: DataFrame) -> BaseStatistics:
+        logger.info("Calculating statistics...")
         # Calculating statistics
         average_price = df["price"].mean()
         median_price = df["price"].median()
         average_price_per_sqft = (df["price"] / df["squarefeet"]).mean()
         total_properties = len(df)
-
+        logger.info("Statistics calculated...")
         return BaseStatistics(
             average_price=average_price,
             median_price=median_price,
