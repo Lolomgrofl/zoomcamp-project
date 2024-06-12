@@ -9,7 +9,7 @@ router = APIRouter(tags=["data_importer"])
 
 
 @router.post("/import")
-async def import_data(file: UploadFile = File(...)):
+def import_data(file: UploadFile = File(...)):
     if not file.filename.endswith(".csv"):
         raise HTTPException(status_code=400, detail="File must be a CSV")
     try:
@@ -17,11 +17,13 @@ async def import_data(file: UploadFile = File(...)):
         df = pd.read_csv(file.file)
 
         # Small data cleaning
+        # NOTE: In the real world, we would need to do more data cleaning and try to understand the data better.
+        # Right now I'll do the most basics steps to make the data importable. On the ETL part, we would need to do more data transformation, feature extraction/engineering etc. That's totally out of the scope of this project.
 
         # Dropping the date datelisted because it has 400k missing values
         df.drop(columns=["datelisted"], inplace=True)
 
-        # Dropping duplicates based on the propertyid because it is the primary key. There was 1 example
+        # Dropping duplicates based on the propertyid because it is the primary key. There was 1 example found for sure, but there might be more.
         df.drop_duplicates(subset="propertyid", keep="first", inplace=True)
 
         # Fill missing values with the mean

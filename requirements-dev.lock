@@ -87,6 +87,8 @@ idna==3.7
     # via email-validator
     # via httpx
     # via requests
+iniconfig==2.0.0
+    # via pytest
 ipykernel==6.29.4
     # via zoomcamp-project
 ipython==8.25.0
@@ -135,6 +137,7 @@ orjson==3.10.4
 packaging==24.1
     # via ipykernel
     # via matplotlib
+    # via pytest
 pandas==2.2.2
     # via zoomcamp-project
 parso==0.8.4
@@ -146,6 +149,8 @@ pillow==10.3.0
 platformdirs==4.2.2
     # via jupyter-core
     # via virtualenv
+pluggy==1.5.0
+    # via pytest
 pre-commit==3.7.1
 prompt-toolkit==3.0.47
     # via ipython
@@ -178,6 +183,8 @@ pymysql==1.1.1
     # via zoomcamp-project
 pyparsing==3.1.2
     # via matplotlib
+pytest==8.2.2
+    # via zoomcamp-project
 python-dateutil==2.9.0.post0
     # via arrow
     # via jupyter-client

@@ -10,7 +10,7 @@ router = APIRouter(tags=["properties"], prefix="/properties")
 
 
 @router.get("", summary="Filter properties by price, bedrooms, bathrooms, and city")
-async def filter_properties(
+def filter_properties(
     session: SessionDep,
     min_price: float | None = Query(None, description="Minimum price"),
     max_price: float | None = Query(None, description="Maximum price"),
@@ -47,7 +47,7 @@ async def filter_properties(
 
 
 @router.get("/statistics", summary="Get statistics about the properties")
-async def process_data() -> BaseStatistics:
+def process_data() -> BaseStatistics:
     df = pd.read_sql("select * from properties", engine)
 
     # Calculating statistics
