@@ -35,3 +35,4 @@ Deployed version of the app can be found at: http://13.58.214.82/docs
 Deployment was done using AWS EC2 instance, Docker and Nginx. 
 
 -What's important to note is that the data available in the deployed version is different from the one in the local version. Because of the size of the data and limits of the Nginx, I had to reduce the size of the data to 1000 rows, which is enough for the demonstration purposes.
+EC2 instance can be a problem because its a t2.micro instance and it has a limited amount of memory and CPU. So, if the app is not working, please let me know so I can reboot the instance again because it can fail a status check. Picture of that [here](static/ec2.png)
