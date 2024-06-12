@@ -4,7 +4,7 @@ from sqlalchemy import engine_from_config, pool
 
 from alembic import context
 from app.models.base import Base
-from app.models.test import *  # noqa
+from app.models.properties import *  # noqa
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
