@@ -16,7 +16,7 @@ services:
   db:
     container_name: "zoomdb"
     image: mysql:latest
-    restart: always
+    restart: on-failure
     volumes:
       - mysql_data:/var/lib/mysql/
     ports:
@@ -32,7 +32,7 @@ services:
       - "zoomnetwork"
 
 volumes:
-  postgres_data:
+  mysql_data:
 
 networks:
   zoomnetwork:
