@@ -1,6 +1,6 @@
 import pandas as pd
 from fastapi import APIRouter, Query, status
-from fastapi.responses import JSONResponse
+from fastapi.exceptions import HTTPException
 
 from app.db import SessionDep, engine
 from app.models.properties import Property
@@ -17,7 +17,7 @@ async def filter_properties(
     bedrooms: int | None = Query(None, description="Number of bedrooms"),
     bathrooms: int | None = Query(None, description="Number of bathrooms"),
     city: str | None = Query(None, description="City"),
-):
+) -> list[PropertyModel]:
     query = session.query(Property)
 
     if min_price:
@@ -38,8 +38,8 @@ async def filter_properties(
     results = query.all()
 
     if not results:
-        JSONResponse(
-            "No properties found for the given filters",
+        raise HTTPException(
+            detail="No properties found for the given filters",
             status_code=status.HTTP_404_NOT_FOUND,
         )
 
