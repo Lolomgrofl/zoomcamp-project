@@ -16,8 +16,12 @@ anyio==4.4.0
     # via httpx
     # via starlette
     # via watchfiles
+appnope==0.1.4
+    # via ipykernel
 arrow==1.3.0
     # via cookiecutter
+asttokens==2.4.1
+    # via stack-data
 binaryornot==0.4.4
     # via cookiecutter
 certifi==2024.6.2
@@ -36,9 +40,19 @@ click==8.1.7
     # via cookiecutter
     # via typer
     # via uvicorn
+comm==0.2.2
+    # via ipykernel
+contourpy==1.2.1
+    # via matplotlib
 cookiecutter==2.6.0
 cryptography==42.0.8
     # via python-jose
+cycler==0.12.1
+    # via matplotlib
+debugpy==1.8.1
+    # via ipykernel
+decorator==5.1.1
+    # via ipython
 distlib==0.3.8
     # via virtualenv
 dnspython==2.6.1
@@ -47,12 +61,16 @@ ecdsa==0.19.0
     # via python-jose
 email-validator==2.1.1
     # via fastapi
+executing==2.0.1
+    # via stack-data
 fastapi==0.111.0
     # via zoomcamp-project
 fastapi-cli==0.0.4
     # via fastapi
 filelock==3.14.0
     # via virtualenv
+fonttools==4.53.0
+    # via matplotlib
 h11==0.14.0
     # via httpcore
     # via uvicorn
@@ -69,11 +87,24 @@ idna==3.7
     # via email-validator
     # via httpx
     # via requests
+ipykernel==6.29.4
+    # via zoomcamp-project
+ipython==8.25.0
+    # via ipykernel
 itsdangerous==2.2.0
     # via fastapi
+jedi==0.19.1
+    # via ipython
 jinja2==3.1.4
     # via cookiecutter
     # via fastapi
+jupyter-client==8.6.2
+    # via ipykernel
+jupyter-core==5.7.2
+    # via ipykernel
+    # via jupyter-client
+kiwisolver==1.4.5
+    # via matplotlib
 loguru==0.7.2
     # via zoomcamp-project
 mako==1.3.5
@@ -83,15 +114,47 @@ markdown-it-py==3.0.0
 markupsafe==2.1.5
     # via jinja2
     # via mako
+matplotlib==3.9.0
+    # via zoomcamp-project
+matplotlib-inline==0.1.7
+    # via ipykernel
+    # via ipython
 mdurl==0.1.2
     # via markdown-it-py
+nest-asyncio==1.6.0
+    # via ipykernel
 nodeenv==1.9.1
     # via pre-commit
+numpy==1.26.4
+    # via contourpy
+    # via matplotlib
+    # via pandas
+    # via zoomcamp-project
 orjson==3.10.4
     # via fastapi
+packaging==24.1
+    # via ipykernel
+    # via matplotlib
+pandas==2.2.2
+    # via zoomcamp-project
+parso==0.8.4
+    # via jedi
+pexpect==4.9.0
+    # via ipython
+pillow==10.3.0
+    # via matplotlib
 platformdirs==4.2.2
+    # via jupyter-core
     # via virtualenv
 pre-commit==3.7.1
+prompt-toolkit==3.0.47
+    # via ipython
+psutil==5.9.8
+    # via ipykernel
+ptyprocess==0.7.0
+    # via pexpect
+pure-eval==0.2.2
+    # via stack-data
 pyasn1==0.6.0
     # via python-jose
     # via rsa
@@ -109,11 +172,17 @@ pydantic-extra-types==2.8.0
 pydantic-settings==2.3.2
     # via fastapi
 pygments==2.18.0
+    # via ipython
     # via rich
 pymysql==1.1.1
     # via zoomcamp-project
+pyparsing==3.1.2
+    # via matplotlib
 python-dateutil==2.9.0.post0
     # via arrow
+    # via jupyter-client
+    # via matplotlib
+    # via pandas
 python-dotenv==1.0.1
     # via pydantic-settings
     # via uvicorn
@@ -124,11 +193,16 @@ python-multipart==0.0.9
     # via fastapi
 python-slugify==8.0.4
     # via cookiecutter
+pytz==2024.1
+    # via pandas
 pyyaml==6.0.1
     # via cookiecutter
     # via fastapi
     # via pre-commit
     # via uvicorn
+pyzmq==26.0.3
+    # via ipykernel
+    # via jupyter-client
 requests==2.32.3
     # via cookiecutter
 rich==13.7.1
@@ -139,6 +213,7 @@ rsa==4.9
 shellingham==1.5.4
     # via typer
 six==1.16.0
+    # via asttokens
     # via ecdsa
     # via python-dateutil
 sniffio==1.3.1
@@ -147,10 +222,22 @@ sniffio==1.3.1
 sqlalchemy==2.0.30
     # via alembic
     # via zoomcamp-project
+stack-data==0.6.3
+    # via ipython
 starlette==0.37.2
     # via fastapi
 text-unidecode==1.3
     # via python-slugify
+tornado==6.4.1
+    # via ipykernel
+    # via jupyter-client
+traitlets==5.14.3
+    # via comm
+    # via ipykernel
+    # via ipython
+    # via jupyter-client
+    # via jupyter-core
+    # via matplotlib-inline
 typer==0.12.3
     # via fastapi-cli
 types-python-dateutil==2.9.0.20240316
@@ -162,6 +249,8 @@ typing-extensions==4.12.2
     # via pydantic-core
     # via sqlalchemy
     # via typer
+tzdata==2024.1
+    # via pandas
 ujson==5.10.0
     # via fastapi
 urllib3==2.2.1
@@ -174,5 +263,7 @@ virtualenv==20.26.2
     # via pre-commit
 watchfiles==0.22.0
     # via uvicorn
+wcwidth==0.2.13
+    # via prompt-toolkit
 websockets==12.0
     # via uvicorn
