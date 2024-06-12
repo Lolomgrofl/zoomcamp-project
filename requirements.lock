@@ -96,6 +96,7 @@ markupsafe==2.1.5
     # via jinja2
     # via mako
 matplotlib==3.9.0
+    # via seaborn
     # via zoomcamp-project
 matplotlib-inline==0.1.7
     # via ipykernel
@@ -108,6 +109,7 @@ numpy==1.26.4
     # via contourpy
     # via matplotlib
     # via pandas
+    # via seaborn
     # via zoomcamp-project
 orjson==3.10.4
     # via fastapi
@@ -116,6 +118,7 @@ packaging==24.1
     # via matplotlib
     # via pytest
 pandas==2.2.2
+    # via seaborn
     # via zoomcamp-project
 parso==0.8.4
     # via jedi
@@ -184,6 +187,8 @@ rich==13.7.1
     # via typer
 rsa==4.9
     # via python-jose
+seaborn==0.13.2
+    # via zoomcamp-project
 shellingham==1.5.4
     # via typer
 six==1.16.0
